@@ -33,8 +33,17 @@ const activeIndex = ref(route.name?.toString() || 'home')
 watch(route, (newRoute) => {
   activeIndex.value = newRoute.name?.toString() || 'home'
 })
+<<<<<<< HEAD
 const handleSelect = (key: string, keyPath: string[]) => {
 console.log(key, keyPath)
+=======
+const handleSelect = (key: string) => {
+// console.log(key)
+router.push({
+  //获取当前路由的name 
+  name: key.charAt(0).toUpperCase() + key.slice(1)
+})
+>>>>>>> 6176239 (mpad5---router)
 }
 </script>
 <style scoped>
