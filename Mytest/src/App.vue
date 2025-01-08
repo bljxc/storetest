@@ -33,8 +33,9 @@ const activeIndex = ref(route.name?.toString() || 'home')
 watch(route, (newRoute) => {
   activeIndex.value = newRoute.name?.toString() || 'home'
 })
-const handleSelect = (key: string, keyPath: string[]) => {
-console.log(key, keyPath)
+const handleSelect = (key: string) => {
+// console.log(key)
+router.push(key)
 }
 </script>
 <style scoped>
