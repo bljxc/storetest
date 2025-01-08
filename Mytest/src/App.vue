@@ -35,7 +35,10 @@ watch(route, (newRoute) => {
 })
 const handleSelect = (key: string) => {
 // console.log(key)
-router.push(key)
+router.push({
+  //获取当前路由的name 
+  name: key.charAt(0).toUpperCase() + key.slice(1)
+})
 }
 </script>
 <style scoped>
