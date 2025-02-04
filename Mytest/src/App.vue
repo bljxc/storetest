@@ -17,6 +17,9 @@
 </el-menu>
 </el-header>
   <el-main>
+    <!-- 路由出口 -->
+     <router-view></router-view>
+    
       </el-main>
 </el-container>
 </template>
@@ -33,18 +36,16 @@ const activeIndex = ref(route.name?.toString() || 'home')
 watch(route, (newRoute) => {
   activeIndex.value = newRoute.name?.toString() || 'home'
 })
-<<<<<<< HEAD
-const handleSelect = (key: string, keyPath: string[]) => {
-console.log(key, keyPath)
-=======
 const handleSelect = (key: string) => {
 // console.log(key)
 router.push({
   //获取当前路由的name 
   name: key.charAt(0).toUpperCase() + key.slice(1)
 })
->>>>>>> 6176239 (mpad5---router)
-}
+ }
 </script>
 <style scoped>
+.el-menu-demo {
+  line-height: 60px;
+}
 </style>

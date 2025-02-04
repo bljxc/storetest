@@ -10,4 +10,31 @@
   <script setup lang="ts">
   </script>
   <style scoped>
+  .home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.content-wrapper {
+  text-align: center;
+  max-width: 800px;
+}
+
+.title {
+  color: #333;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.description {
+  color: #666;
+  font-size: 18px;
+  line-height: 1.5;
+}
 </style>
