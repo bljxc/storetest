@@ -21,7 +21,7 @@
 <script setup lang="ts">
 import {ref} from 'vue'
 import { useRouter } from 'vue-router';
-import {useAuthStore} from '../store/auth';
+import {useauthStore} from '../store/auth';
 import { ElMessage } from 'element-plus';
 
 const form = ref({
@@ -30,7 +30,7 @@ const form = ref({
 })
 
 const router = useRouter();
-const authStore = useAuthStore();
+const authStore = useauthStore();
 
 const login= async()=>{
   try{

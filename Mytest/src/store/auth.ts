@@ -1,13 +1,14 @@
 import { defineStore } from 'pinia'
-import axios from 'axios'
-import { ref } from 'vue'
+import axios from '../axios/axios' 
+import { ref , computed  } from 'vue'  
 import { useRouter } from 'vue-router'
 
-const router = useRouter()
-
-export const useAuthStore = defineStore('auth', ()=>{
+export const useauthStore = defineStore('auth', ()=>{
     const token = ref<string | null>(localStorage.getItem('token'))
-
+    const router = useRouter()
+    const  isAuthenticated = computed(() => 
+        !!token.value
+    )
     const login = async(username:string,password:string) => {
        try{
         // 发送登录请求
@@ -19,15 +20,11 @@ export const useAuthStore = defineStore('auth', ()=>{
           localStorage.setItem('token', token.value || '');
           console.log(res);
        }catch(error){
-        console.error(error, '登录失败');
         router.push({
-            name: 'Login'
-          })
+            name: 'login'
+        })
+        console.error(error, '登录失败');
        }
-        
-      
-    
-      
     }
     
     const register = async(username:string,password:string) => {
@@ -56,6 +53,7 @@ export const useAuthStore = defineStore('auth', ()=>{
         token,
         login,
         register,
-        logout
+        logout,
+        isAuthenticated
     }
 })
