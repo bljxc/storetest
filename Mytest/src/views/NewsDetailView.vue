@@ -29,7 +29,7 @@
                             placeholder="写下你的评论..."
                         />
                         <el-button type="primary" @click="submitComment" :disabled="!newComment.trim()">
-                            发表评论
+                            发表评论as
                         </el-button>
                     </div>
                     
