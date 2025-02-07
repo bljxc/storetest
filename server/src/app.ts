@@ -13,7 +13,7 @@ app.use(cors());
 app.use('/api/auth', authRoutes);
 app.use('/api/articles', articleRoutes);
 app.use('/api/exchangeRates', exchangeRateRoutes); 
-mongoose.set('useCreateIndex', true)
+
 const startServer = async () => {
   try {
     await mongoose.connect('mongodb://localhost:27017/currencyeg', {

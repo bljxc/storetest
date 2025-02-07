@@ -48,7 +48,7 @@ const viewDetail =(id:string)=>{
         return
     }
     router.push({
-        name:'newsDetail',
+        name:'NewsDetail',
         params:{id}
     })
 }
