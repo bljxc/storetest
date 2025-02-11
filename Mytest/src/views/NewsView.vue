@@ -3,10 +3,10 @@
         <el-container>
             <el-main>
                 <div v-if="articles && articles.length">
-                <el-card v-for="article in articles" :key="article._id" class="article-card">
+                <el-card v-for="article in articles" :key="article.id" class="article-card">
                   <h2>{{article.title}}</h2>
                   <P>{{article.preview}}</P>
-                  <el-button text @click="viewDetail(article._id)">阅读更多</el-button>  
+                  <el-button text @click="viewDetail(article.id)">阅读更多</el-button>  
                 </el-card>
             </div>
             <div v-else class="no-data">no data</div>
@@ -23,7 +23,7 @@ import { useRouter } from 'vue-router';
 import { ElMessage } from 'element-plus';
 
 interface Article {
-    _id: string;
+    id: string;
     title: string;
     preview:string;
     createBy: string;

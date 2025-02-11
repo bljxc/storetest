@@ -29,14 +29,14 @@
                             placeholder="写下你的评论..."
                         />
                         <el-button type="primary" @click="submitComment" :disabled="!newComment.trim()">
-                            发表评论as
+                            发表评论
                         </el-button>
                     </div>
                     
                     <!-- 评论列表 -->
                     <div class="comments-list">
                         <el-empty v-if="!comments.length" description="暂无评论" />
-                        <div v-else v-for="comment in comments" :key="comment._id" class="comment-item">
+                        <div v-else v-for="comment in comments" :key="comment.id" class="comment-item">
                             <div class="comment-header">
                                 <span class="comment-author">{{ comment.author }}</span>
                                 <span class="comment-time">{{ formatDate(comment.createdAt) }}</span>
@@ -59,7 +59,7 @@ import { useauthStore } from '../store/auth';
 import { ElMessage } from 'element-plus';
 
 interface Article {
-    _id: string;
+    id: string;
     title: string;
     preview: string;
     createBy: string;
@@ -68,7 +68,7 @@ interface Article {
 }
 
 interface Comment {
-    _id: string;
+    id: string;
     author: string;
     content: string;
     createdAt: string;
