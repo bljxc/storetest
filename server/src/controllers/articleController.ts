@@ -85,21 +85,28 @@ export const getComments = async (req: Request, res: Response) => {
   }
 };
 
+// 导出一个异步函数，用于点赞文章
 export const likeArticle = async (req: AuthRequest, res: Response) => {
   try {
+    // 获取请求参数中的文章id
     const { id } = req.params;
+    // 获取请求中的用户id
     const userId = req.userId;
 
+    // 如果用户id不存在，返回401状态码和未授权信息
     if (!userId) {
       return res.status(401).json({ message: 'Unauthorized' });
     }
 
+    // 调用Article.addLike方法，传入文章id和用户id，用于点赞文章
     await Article.addLike({
       articleId: Number(id),
       userId: Number(userId)
     });
+    // 返回点赞成功信息
     res.json({ success: true });
   } catch (error) {
+    // 如果出现错误，返回500状态码和错误信息
     res.status(500).json({ message: 'Error liking article', error });
   }
 };
