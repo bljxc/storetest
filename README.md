@@ -7,21 +7,21 @@
 
 **前端技术**
 - Vue 3 (Composition API)
-- TypeScript 4.x
+- TypeScript 
 - Pinia 状态管理
-- Element Plus 2.x
+- Element Plus 
 - Axios 网络请求
-- Vue Router 4.x
+- Vue Router 
 
 **后端技术**
-- Node.js 18.x
-- Express 4.x
-- TypeORM 0.3.x
+- Node.js 
+- Express 
+- TypeORM 
 - MSSQL 数据库驱动
 - SQL Server 2019+
 
 **开发工具**
-- Vite 4.x
+- Vite 
 - ESLint + Prettier
 - CommitLint 规范提交
 
